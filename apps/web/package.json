@@ -23,6 +23,7 @@
         "pdf-lib": "latest",
         "react": "latest",
         "react-dom": "latest",
+        "react-dropzone": "^15.0.0",
         "sharp": "latest",
         "socket.io-client": "latest",
         "tailwindcss": "latest",
