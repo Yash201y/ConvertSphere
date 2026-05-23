@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id      String @id @default(cuid())
+  clerkId String @unique
+  email   String @unique
+
+  plan Plan @default(FREE)
+
+  dailyConversions Int @default(0)
+
+  conversions Conversion[]
+  apiKeys     ApiKey[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum Plan {
+  FREE
+  PRO
+  BUSINESS
+  ENTERPRISE
+}
+
+model Conversion {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  originalName  String
+  convertedName String
+
+  originalType  String
+  convertedType String
+
+  createdAt DateTime @default(now())
+}
+
+model ApiKey {
+  id String @id @default(cuid())
+
+  key String @unique
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+model Usage {
+  id String @id @default(cuid())
+
+  userId String @unique
+
+  conversions Int @default(0)
+
+  updatedAt DateTime @updatedAt
+}

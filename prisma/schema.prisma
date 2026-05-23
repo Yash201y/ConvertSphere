@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  image     String?
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  files     File[]
+  apiKeys   ApiKey[]
+}
+
+model File {
+  id          String   @id @default(cuid())
+  name        String
+  type        String
+  status      String
+  size        Int
+  url         String
+  converted   String?
+  createdAt   DateTime @default(now())
+  userId      String
+  user        User @relation(fields: [userId], references: [id])
+}
+
+model ApiKey {
+  id        String @id @default(cuid())
+  key       String @unique
+  userId    String
+  user      User @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+enum Role {
+  USER
+  ADMIN
+}

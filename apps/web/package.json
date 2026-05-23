@@ -1,0 +1,32 @@
+{
+    "name": "web",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start"
+    },
+    "dependencies": {
+        "@aws-sdk/client-s3": "^3.1048.0",
+        "@aws-sdk/s3-request-presigner": "^3.1048.0",
+        "@clerk/nextjs": "^7.3.7",
+        "@prisma/client": "latest",
+        "@react-three/drei": "latest",
+        "@react-three/fiber": "latest",
+        "@tanstack/react-query": "latest",
+        "axios": "latest",
+        "framer-motion": "latest",
+        "gsap": "latest",
+        "lucide-react": "latest",
+        "next": "latest",
+        "next-themes": "latest",
+        "pdf-lib": "latest",
+        "react": "latest",
+        "react-dom": "latest",
+        "sharp": "latest",
+        "socket.io-client": "latest",
+        "tailwindcss": "latest",
+        "three": "latest",
+        "zustand": "latest"
+    }
+}

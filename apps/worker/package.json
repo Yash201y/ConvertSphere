@@ -1,0 +1,17 @@
+{
+    "name": "convertsphere-worker",
+    "scripts": {
+      "dev": "tsx watch src/index.ts",
+      "build": "tsc",
+      "start": "node dist/index.js"
+    },
+    "dependencies": {
+      "bullmq": "latest",
+      "ioredis": "latest",
+      "libreoffice-convert": "latest"
+    },
+    "devDependencies": {
+      "tsx": "latest",
+      "typescript": "latest"
+    }
+  }

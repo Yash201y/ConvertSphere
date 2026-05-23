@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: convertsphere-web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: convertsphere-web
+  template:
+    metadata:
+      labels:
+        app: convertsphere-web
+    spec:
+      containers:
+        - name: web
+          image: convertsphere/web:latest
+          ports:
+            - containerPort: 3000

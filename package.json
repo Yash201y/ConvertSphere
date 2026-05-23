@@ -1,0 +1,21 @@
+{
+    "name": "convertsphere",
+    "private": true,
+    "packageManager": "pnpm@9.0.0",
+    "scripts": {
+        "dev": "turbo dev",
+        "build": "turbo build",
+        "lint": "turbo lint",
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "prettier": "latest",
+        "turbo": "latest",
+        "typescript": "latest"
+    },
+    "dependencies": {
+        "@aws-sdk/client-s3": "^3.1048.0",
+        "@aws-sdk/s3-request-presigner": "^3.1048.0",
+        "react-dropzone": "^15.0.0"
+    }
+}

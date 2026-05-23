@@ -1,0 +1,8 @@
+{
+    "name": "ConvertSphere",
+    "short_name": "ConvertSphere",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#4f46e5"
+  }
