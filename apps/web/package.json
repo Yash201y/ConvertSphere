@@ -29,5 +29,9 @@
         "tailwindcss": "latest",
         "three": "latest",
         "zustand": "latest"
+    },
+    "devDependencies": {
+        "@types/node": "^25.9.1",
+        "typescript": "^6.0.3"
     }
 }
